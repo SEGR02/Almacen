@@ -6,6 +6,8 @@
 -- Tiempo de generación: 11-10-2022 a las 19:28:12
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.2
+-- comprobando que funcione el github
+-- comprobando github again
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
