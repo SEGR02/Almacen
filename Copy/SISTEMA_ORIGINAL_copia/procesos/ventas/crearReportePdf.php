@@ -43,27 +43,29 @@ require_once '../../librerias/FPDF/fpdf.php';
         {
             $this->SetTextColor(51, 122, 183);
             $this->SetFont('Arial','B',18);
-            $this->SetXY(10,10);
+            $this->SetXY(10,16);
             $this->Cell(0,4,'Ferre motos',0,1,'L');
-            $this->SetXY(10,17);
+            $this->SetXY(10,23);
             $this->Cell(0,4,'Aqui me Quedo',0,1,'L');
 
             
         
-            $this->Image('../../img/hola.jpg',100,5,40);
+            $this->Image('../../img/hola.jpg',165,5,38);
             $this->Ln(7);
-            
-
-
-        
-        }
+        }    
+        function Footer()
+        {
+            $this->SetY(-15);
+            $this->SetFont('Arial','I',8);    
+            $this->Cell(0,8,utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C');
+        }    
     } 
 		
-    $pdf = new PDF('P','mm',array(300,150));
+    $pdf = new PDF();
         $pdf->AliasNbPages();
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',15);
-    $pdf->SetXY(12,25);
+    $pdf->SetXY(12,30);
     
     $pdf->Cell(0,6,'Reporte De Venta',0,1,'C');
     $pdf->Ln(3);
@@ -76,7 +78,7 @@ require_once '../../librerias/FPDF/fpdf.php';
     $pdf->SetFillColor(255, 255, 255 );
     $pdf->MultiCell(40,4,utf8_decode($objv->nombreCliente($idcliente)),0,1,'L');
 
-    $pdf->Ln(3);
+    $pdf->Ln(10);
     
 
     $sql="SELECT ve.id_venta,
@@ -119,4 +121,4 @@ require_once '../../librerias/FPDF/fpdf.php';
         $pdf->Cell(65,10,$total . '$',1,1,'C',0);
 
     $pdf->Output('reporteVenta_'.$f.'.pdf','D');
-
+?>

@@ -21,7 +21,8 @@
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Articulos</label></caption>
-	<caption><label><a href="inventarioPDF.php?">Inventario</label></caption>
+	<caption><label><a href="../../almacen/vistas/articulos/inventarioPDF.php?">Inventario</label></caption>
+	<caption><label><a href="../../almacen/vistas/articulos/historialarticulos.php?">Historial</label></caption>
 	<tr>
 		<td>Nombre</td>
 		<td>Descripcion</td>

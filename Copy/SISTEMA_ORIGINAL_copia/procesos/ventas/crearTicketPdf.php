@@ -52,10 +52,6 @@ require_once '../../librerias/FPDF/fpdf.php';
         
             $this->Image('../../img/hola.jpg',55,5,20);
             $this->Ln(7);
-            
-
-
-        
         }
     }
 
@@ -118,5 +114,5 @@ require_once '../../librerias/FPDF/fpdf.php';
         $pdf->SetTextColor(0, 0, 0);
         $pdf->Cell(30,5,$total . '$',1,1,'C',0);
 
-    $pdf->Output('reporteVenta_'.$f.'.pdf','D');
-
+    $pdf->Output('TicketVenta_'.$f.'.pdf','D');
+?>

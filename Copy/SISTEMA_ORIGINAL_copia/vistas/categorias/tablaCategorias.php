@@ -13,6 +13,7 @@
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Categorias :D</label></caption>
+	<caption><label><a href="../../almacen/vistas/categorias/historialcategorias.php?">Historial</label></caption>
 	<tr>
 		<td>Categoria</td>
 		<td>Editar</td>

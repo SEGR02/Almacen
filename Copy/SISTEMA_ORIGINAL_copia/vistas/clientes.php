@@ -15,7 +15,7 @@ if(isset($_SESSION['usuario'])){
 		<div class="container">
 			<h1>Clientes</h1>
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-3">
 					<form id="frmClientes">
 						<label>Nombre</label>
 						<input type="text" class="form-control input-sm" id="nombre" name="nombre">
@@ -87,6 +87,7 @@ if(isset($_SESSION['usuario'])){
 				url:"../procesos/clientes/obtenDatosCliente.php",
 				success:function(r){
 					dato=jQuery.parseJSON(r);
+
 					$('#idclienteU').val(dato['id_cliente']);
 					$('#nombreU').val(dato['nombre']);
 					$('#apellidosU').val(dato['apellido']);
@@ -158,8 +159,8 @@ if(isset($_SESSION['usuario'])){
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#btnAgregarClienteU').click(function(){
+				
 				datos=$('#frmClientesU').serialize();
-
 				$.ajax({
 					type:"POST",
 					data:datos,
@@ -167,7 +168,6 @@ if(isset($_SESSION['usuario'])){
 					success:function(r){
 
 						if(r==1){
-							$('#frmClientes')[0].reset();
 							$('#tablaClientesLoad').load("clientes/tablaClientes.php");
 							alertify.success("Cliente actualizado con exito :D");
 						}else{

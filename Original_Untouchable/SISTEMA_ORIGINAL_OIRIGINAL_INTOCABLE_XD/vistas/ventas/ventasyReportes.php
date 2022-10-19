@@ -1,3 +1,15 @@
+<html lang="es">
+	<head> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>	
+
+	<section id="tabla_resutado">
+
+
+    </section>	
+</html>	
 <?php 
 
 	require_once "../../clases/Conexion.php";
@@ -17,20 +29,14 @@
 	$result=mysqli_query($conexion,$sql); 
 	?>
 <div>
-			 	<form>
-	<select>
-		<option>fecha</option>
-		<option>cliente</option>
-		<option>total de compra</option>
-	</select>
-	<select>
-		<option>mayor a</option>
-		<option>menor a</option>
-		<option>igual a</option>
-	</select>
-	<label>valor</label>
-	<input type="text" name="total">
-	<button class="btn">buscar</button>
+<form name="formFechas" id="formFechas">
+	<div class="form-group">
+		<label>Fecha Inicial</label>
+		<input type="date" name="fecha_inicio" required>
+		<label>Fecha Final</label>
+		<input type="date" name="fecha_fin" required>
+    	<button type="submit" class="btn btn-primary">Buscar</button>
+	</div>
 </form>
 </div>
 <h4>Reportes y ventas</h4>
@@ -83,3 +89,27 @@
 	</div>
 	<div class="col-sm-1"></div>
 </div>
+
+<script type="text/javascript">
+ 
+ $('Formfechas').submit(function(e){
+
+	 e.preventDefault();
+
+	 var form = $($this);
+	 var url = form.attr('action');
+
+	 $.ajax(
+	 {
+		 type: "POST",
+		 url: 'fechas.php',
+		 data: form.serialize(),
+		 success: function(data)
+		 {
+			 $('#tabla_resultado').html('');
+			 $('#tabla_resultado').append(data); 
+		 }
+	 });
+ }); 
+
+</script>

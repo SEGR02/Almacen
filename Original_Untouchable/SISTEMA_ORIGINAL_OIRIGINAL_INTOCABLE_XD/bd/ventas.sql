@@ -16,7 +16,7 @@ create table categorias (
 				id_categoria int auto_increment,
 				id_usuario int not null,
 				nombreCategoria varchar(150),
-				fechaCaptura date,
+				fechaCaptura datetime current_timestamp,
 				primary key(id_categoria)
 						);
 
@@ -39,9 +39,17 @@ create table articulos(
 				precio float,
 				fechaCaptura date,
 				primary key(id_producto)
-
 						);
-
+create table proveedores(
+				id_proveedor int auto_increment,
+				id_usuario int not null,
+				nombrec varchar(200),
+				rife varchar(200),
+				representante varchar (200),
+				rifr varchar (200),
+				telefonor varchar (200),
+				primary key(id_proveedor)
+						);
 create table clientes(
 				id_cliente int auto_increment,
 				id_usuario int not null,

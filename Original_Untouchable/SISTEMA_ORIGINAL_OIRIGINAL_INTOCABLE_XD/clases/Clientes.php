@@ -36,7 +36,7 @@
 							email,
 							telefono,
 							rif
-				from clientes";
+				from clientes where id_cliente = $idcliente";
 			$result=mysqli_query($conexion,$sql);
 			$ver=mysqli_fetch_row($result);
 
@@ -55,6 +55,7 @@
 		public function actualizaCliente($datos){
 			$c= new conectar();
 			$conexion=$c->conexion();
+
 			$sql="UPDATE clientes set nombre='$datos[1]',
 										apellido='$datos[2]',
 										direccion='$datos[3]',

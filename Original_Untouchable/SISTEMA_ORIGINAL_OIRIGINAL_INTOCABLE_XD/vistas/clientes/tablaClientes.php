@@ -14,11 +14,13 @@
 				rif 
 		from clientes";
 	$result=mysqli_query($conexion,$sql);
- ?>
+?>
 
-<div class="table-responsive">
+
 	 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	 	<caption><label>Clientes :)</label></caption>
+	 	<caption><label><a href="../../almacen/vistas/clientes/registroclientesPDF.php?">Registro</label></caption>
+	 	<caption><label><a href="../../almacen/vistas/clientes/historialclientes.php?">Historial</label></caption>
 	 	<tr>
 	 		<td>Nombre</td>
 	 		<td>Apellido</td>
@@ -40,7 +42,7 @@
 	 		<td><?php echo $ver[5]; ?></td>
 	 		<td><?php echo $ver[6]; ?></td>
 	 		<td>
-				<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalClientesUpdate" onclick="agregaDatosCliente('<?php echo $ver[0]; ?>')">
+				<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalClientesUpdate" onclick="agregaDatosCliente('<?php echo $ver[0] ?>','<?php echo $ver[1] ?>')">
 					<span class="glyphicon glyphicon-pencil"></span>
 				</span>
 			</td>
@@ -52,4 +54,3 @@
 	 	</tr>
 	 <?php endwhile; ?>
 	 </table>
-</div>
